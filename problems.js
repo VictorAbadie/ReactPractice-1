@@ -19,24 +19,11 @@
 // Let’s start with the tables that many of us had to memorize in school. Can you print a table that contains all the answers to the multiplication tables from 1 through 10?
 // Like Challenge #1, can you create an efficient solution that you could easily expand should you need the 12 times table?
 
-var result = 'x';
-// First number in the problem (example: n X 1,2,3,etc)
-for (var n = 0; n < 13; n++) {
-
-// Second number in the problem (example: 1,2,3,etc x n)
-    for (var m = 0; m < 13; m++) {
-
-        if(n == 0 && m > 0){
-          result += '[' + m + ']';
-        } 
-        else if(m == 0 && n>0){
-          result += '[' + n + '] ';
-        } 
-        else if(n>0 && m>0){
-        result += (n*m) + ' ';
-        }
+let result = " x\t 1\t 2\t 3\t 4\t 5\t 6\t 7\t 8\t 9\t10 "
+for (let i = 1; i <= 10; i++) {
+    result += `\n${i < 10 ? ' ' + i : i}`
+    for (let j = 1; j <= 10; j++) {
+        result += `\t${i * j >= 10 ? i*j : ' ' + i*j}`
     }
-    result += '\n'
 }
-
-console.log(result);
+console.log(result)
